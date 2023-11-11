@@ -7,13 +7,16 @@ import CourseRoutes from "./courses/routes.js";
 import ModuleRoutes from "./modules/routes.js";
 import AssignmentRoutes from "./assignments/routes.js";
 import cors from "cors";
+const isDevelopment = process.env.NODE_ENV === "development";
 const app = express();
 app.use(
     cors({
-        credentials: true,
-        origin: process.env.FRONTEND_URL
+      credentials: true,
+      origin: isDevelopment
+        ? process.env.FRONTEND_URL 
+        : "https://statuesque-kringle-a101ff.netlify.app"
     })
-);
+  );
 app.use(express.json());
 AssignmentRoutes(app);
 ModuleRoutes(app);
