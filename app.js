@@ -18,7 +18,7 @@ app.use(
     credentials: true,
     origin: isDevelopment
       ? process.env.FRONTEND_URL
-      : "https://statuesque-kringle-a101ff.netlify.app"
+      : "https://lustrous-lamington-f0781d.netlify.app"
   })
 );
 const sessionOptions = {
